@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opanchu Usagi Fortune App</title>
+
+  <style>
+    body {
+      font-family: "Nunito", "Arial Rounded MT Bold", sans-serif;
+      background-color: #ffe4e1;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 60%;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: hotpink;
+    }
+
+    p {
+      color: #555;
+    }
+
+    button {
+      background-color: hotpink;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: deeppink;
+    }
+
+    .result {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .emoji {
+      font-size: 40px;
+      margin-top: 10px;
+    }
+
+    .small-note {
+      margin-top: 20px;
+      font-size: 12px;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>🐰 Opanchu Usagi Fortune</h1>
+    <p>Click the button to see your unlucky but cute fortune!</p>
+
+    <button onclick="getFortune()">Get Fortune</button>
+
+    <div class="result" id="result">Your fortune will appear here...</div>
+    <div class="emoji" id="emoji">🐰</div>
+
+  </div>
+
+  <script>
+    const fortunes = [
+      { text: "You will trip today... but in a cute way 🥺", emoji: "😢" },
+      { text: "Something unlucky will happen, but you will still be fine 🐰", emoji: "😵" },
+      { text: "You will lose something... but find something better later ✨", emoji: "😅" },
+      { text: "A peaceful day... suspiciously peaceful 🤔", emoji: "🙂" },
+      { text: "You will receive unexpected snacks 🍪", emoji: "😍" },
+      { text: "You might cry a little today... but that's okay 💕", emoji: "😭" },
+      { text: "Good luck? No. Cute luck? YES 🐰✨", emoji: "😊" }
+    ];
+
+    function getFortune() {
+      const randomIndex = Math.floor(Math.random() * fortunes.length);
+      const fortune = fortunes[randomIndex];
+
+      document.getElementById("result").innerText = fortune.text;
+      document.getElementById("emoji").innerText = fortune.emoji;
+    }
+  </script>
+
+  <p>Go to back to <a href="index.html" title="Back to home the page">Home</a></p>
+  
+</body>
+</html>
